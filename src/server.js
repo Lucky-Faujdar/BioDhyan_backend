@@ -23,12 +23,12 @@ app.use(express.json());
 // --- CORS ---
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://nasa-project-6byr.onrender.com"], // Allow all temporarily for testing
+    origin: ["http://localhost:5173", "https://biodhyan-frontend.onrender.com"], // Allow all temporarily for testing
     credentials: true,
   })
 );
 
-// --- Health Check ---
+// --- Health Check ---git
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
 // --- API Routes ---
