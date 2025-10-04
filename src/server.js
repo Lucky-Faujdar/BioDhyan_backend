@@ -10,6 +10,8 @@ import { connectDB } from "./utils/db.js";
 import searchRoute from "./routes/search.js";
 import deepaiRoute from "./routes/deepai.js";
 import NasaData from "./models/NasaData.js";
+import nasaRoute from "./routes/nasa.js";
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -34,6 +36,8 @@ app.get("/api/health", (req, res) => res.json({ ok: true }));
 // --- API Routes ---
 app.use("/api/search", searchRoute);
 app.use("/api/deepai", deepaiRoute);
+app.use("/api", nasaRoute);
+
 
 // --- Serve Frontend ---
 app.use(express.static(path.join(__dirname, "..", "..", "dist")));
